@@ -23,8 +23,8 @@ def api_crud(request):
 
 
 @api_view(['GET'])
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
+# @authentication_classes([JWTAuthentication])
+# @permission_classes([IsAuthenticated])  #commented these two lines"
 def taskList(request):
     task = Task.objects.all()
     serializers = TaskSerializers(task, many=True)
